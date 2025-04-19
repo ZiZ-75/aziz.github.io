@@ -28,15 +28,36 @@
         </ul>
       </aside>
       <main class="content">
-        <h2>Informasi Kontak</h2>
-        <p>Silakan hubungi kami melalui kontak berikut:</p>
-        <p><strong>Email:</strong> hubkami@website.com</p>
-        <p><strong>Telepon:</strong> 085213987107</p>
-        <p><strong>Social Media:</strong> @websiteofficial</p>
+        <h2>Hubungi Kami via WhatsApp</h2>
+        <form id="formWA">
+          <label for="nama">Nama:</label>
+          <input type="text" id="nama" name="nama" required>
+          <label for="pesan">Pesan:</label>
+          <textarea id="pesan" name="pesan" rows="5" required></textarea>
+          <button type="submit">Kirim ke WhatsApp</button>
+      </form>
       </main>
     </div>
     <footer>
       <p>&copy; 2025 Website Saya</p>
     </footer>
+      <script>
+        document.getElementById("formWA").addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          //  Ambil nilai input
+          var nama = document.getElementById("nama").value;
+          var pesan = document.getElementById("pesan").value;
+
+          // Nomor WhatsApp tujuan (gunakan format internasional, tanpa = atau 0 di deapn)
+          var noWA = "625213987107"
+
+          // Gabungkan pesan
+          var teks = 'Halo, saya ${nama}.%0A${pesan}';
+
+          //  Buka link WhatsApp
+          window.open('https://wa.me/${625213987107}?text=${teks}', "_blank");
+        });
+      </script>
   </body>
 </html>
